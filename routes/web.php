@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AnalysisController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('patient');
 });
+
+Route::post('patient',[AnalysisController::class,'create'])->name('create');
+
+Route::post('patient/analysis',[AnalysisController::class,'create_analysis'])->name('create_analysis');
