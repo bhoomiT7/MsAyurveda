@@ -1180,7 +1180,7 @@
         </div>
     </div>
     <button type="submit" id="submit">Submit</button>
- 
+    <button type="button" id="generatePdfBtn">Generate Pdf</button>
 </form>
     <script src="bootstrap-5.3.2-dist/js/bootstrap.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -1247,5 +1247,11 @@
     });
 
 
-
+    document.addEventListener("DOMContentLoaded", function() {
+    var generatePdfBtn = document.getElementById("generatePdfBtn");
+    generatePdfBtn.addEventListener("click", function() {
+        // Redirect to the view_pdf route
+        window.location.href = "/viewpdf"; // Replace with your actual route
+    });
+});
 </script>

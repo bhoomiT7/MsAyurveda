@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\patient_analysis;
 use Illuminate\Http\Request;
 use App\Models\patients;
+use PDF;
+
 class AnalysisController extends Controller
 {
     public function create(Request $request){    
@@ -56,5 +58,11 @@ class AnalysisController extends Controller
         $data->communicationskill=$request->BodyFrame27;
         $data->save();
         return back();
+    }
+    public function view()
+    {
+        $data = patient_analysis::latest()->first();
+        $pdf = PDF::loadView('Ticket.view', $data);
+        return $pdf->stream('document.pdf');
     }
 }
