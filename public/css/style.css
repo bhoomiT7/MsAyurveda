@@ -1,0 +1,269 @@
+.container {
+    width:100%;
+    margin-top:20px;
+    margin-bottom:20px;
+ justify-content: center !important;
+ /* background-color: red; */
+   
+
+}
+
+
+body {
+    color: #181818;
+    font: 300 14px/30px "Open Sans",Sans-serif;
+    font-family: "Open Sans",Sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 25px;
+    justify-content: center;
+ 
+   
+  
+  
+
+}
+.main{
+    justify-content: center;
+    margin-left: 140px;
+}
+
+.main-text {
+    text-align: center;
+}
+.prakriti-form {
+    align-items: center !important;
+    border-left: 4px solid #ddd;
+    margin-bottom: 30px !important;
+    margin-top:55px;
+    width: 850px;
+    background-color: #ffffff;
+    font-size: 17px;
+
+}
+.prakritiAnswers{
+    margin-bottom:0;
+
+}
+
+.title {
+    padding-top: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    font-size: 28px;
+    color: #000;
+    font-weight: 400;
+}
+
+.title::before {
+    background-image: url('../images/Leaf.svg'); 
+    content: " ";
+    height: 30px;
+    width: 20px;
+    background-size: cover;
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+
+
+
+
+.prakritiAnswer {
+    background-color: #e2e2e2;
+    margin-bottom: 3px;
+    height: 65px !important;
+    display: table;
+    width: 100%;
+    padding: 22px 15px;
+   
+}
+.prakriti-form .prakritiAnswer.active {
+    background-color: #73492f;
+    
+}
+
+
+
+
+
+.prakriti-form .prakritiAnswer.active .label span {
+    color: white;
+}
+.prakriti-form .prakritiAnswer.active .label:before {
+    border-color: #ffffff; 
+}
+
+
+
+
+.prakritiAnswer:last-child {
+    margin-bottom: 0 !important;
+   
+}
+
+.prakriti-submit {
+    text-align: center;
+    background-color: #73492f;
+    color: white;
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    border:none;
+
+
+}
+
+.prakriti-submit .primary {
+   
+    display: inline-block;
+    float: none;
+
+}
+
+.actions-toolbar.prakriti-submit > .primary .action {
+    /* width: 150px; */
+    font-size: 16px;
+
+}
+.prakritiQuestioncounter{
+    margin-top: 30px;
+    margin-bottom: 0 !important;
+  
+}
+.prakritiQuestioncounter14{
+    padding-top: 10px;
+    margin-bottom: 0 !important;
+  
+}
+.prakritiAnswer .label {
+    /* padding-left: 20px; */
+    text-align: left;
+    color: #000;
+    font-weight: 400;
+
+
+}
+
+
+
+.prakritiAnswer .field {
+    display: table-cell;
+    vertical-align: middle;
+  
+}
+
+.prakritiAnswer input[type="radio"] {
+    position: absolute;
+    left: -9999px;
+   
+}
+.prakritiAnswer .control {
+    position: relative;
+
+}
+
+/* label */
+.prakritiAnswer input[type="radio"] + .label {
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: #666;
+  
+  
+   
+}
+/* radio fill*/
+.prakritiAnswer input[type="radio"] + .label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #000;
+    border-radius: 100%;
+    bottom: 0;
+    
+}
+
+/* radio checked */
+.prakritiAnswer input[type="radio"]:checked + .label:after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: white;
+    position: absolute;
+    top: 0;
+    bottom: 2px;
+    left: 5px;
+    border-radius: 100%;
+    transition: all .2s ease;
+    margin: auto;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.prakritiAnswer input[type="radio"]:not(:checked) + .label:after {
+    opacity: 0;
+    transform: scale(0);
+   
+}
+.footer-button{
+  margin-left:235px;
+   
+}
+
+/* Modal css */
+.inputbox{
+    border:1px solid #f6f8fa;
+}
+
+.modalform{
+    width: 100%;
+    height: auto;
+    background-color:#f6f8fa;
+}
+.modalrow{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom:20px;
+  
+
+}
+.modal-container {
+    text-align: center; /* Align the submit button to the right */
+}
+
+.modalbutton {
+    background-color: #73492f;
+    color: white;
+    font-size: 17px;
+    margin-top: 20px !important;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 15px;
+}
+
+.modalform{
+    background-color:#f6f8fa;
+    border-radius: 5px;
+    padding: 10px 10px;
+    border:1px solid gray;
+  
+}
+.heading{
+    font-size: 16px;
+}
+.radiobtn{
+    margin-top: 20px;
+}
+.modalmainform{
+    width: 100%;
+    margin: 15px 15px;
+}
