@@ -25,13 +25,7 @@ class AnalysisController extends Controller
         //dd($request->BodyFrame);
         
         $data=new client_data();
-        // $data->firstname=$request->firstname;
-        // $data->lastname=$request->lastname;
-        // $data->city=$request->city;
-        // $data->contactno=$request->contact;
-        // $data->gender=$request->gender;
-        // $data->age=$request->age;
-        // $data->email=$request->email;
+    
         $data->bodyframe=$request->BodyFrame1;
         $data->typeofhair=$request->BodyFrame2;
         $data->colorofhair=$request->BodyFrame3;
@@ -59,6 +53,9 @@ class AnalysisController extends Controller
         $data->wealth=$request->BodyFrame25;
         $data->bowelmovement=$request->BodyFrame26;
         $data->communicationskill=$request->BodyFrame27;
+        $data->vatta=$request->vatta;
+        $data->pitta=$request->pitta;
+        $data->kapha=$request->kapha;
         $data->save();
         return back();
     }

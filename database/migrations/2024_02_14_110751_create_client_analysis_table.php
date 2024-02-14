@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('client_anaylsis', function (Blueprint $table) {
+        Schema::create('client_analysis', function (Blueprint $table) {
             $table->id();
             $table->string('firstname');
             $table->string('lastname');
@@ -47,6 +47,9 @@ return new class extends Migration
             $table->string('wealth')->nullable();
             $table->string('bowelmovement')->nullable();
             $table->string('communicationskill')->nullable();
+            $table->unsignedInteger('vatta');
+            $table->unsignedInteger('pitta');
+            $table->unsignedInteger('kapha');
             $table->timestamps();
         });
     }
@@ -56,6 +59,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('client_anaylsis');
+        Schema::dropIfExists('client_analysis');
     }
 };

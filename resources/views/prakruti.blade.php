@@ -1179,6 +1179,9 @@
                     </div>
                 </div>   
         </div>
+        <input type="text" name="vatta" id="vatta">
+        <input type="text" name="pitta" id="pitta">
+        <input type="text" name="kapha" id="kapha">
     </div>
     <button type="submit" id="submit">Submit</button>
     <button type="button" id="generatePdfBtn">Generate Pdf</button>
@@ -1317,11 +1320,14 @@ $(document).ready(function(){
                 else{  kapha++;}
                 selectedId =  $(this).attr('id');
                 $('#' + selectedId).val(selectedTitle);
+                $('#vatta').val(vatta);     
+                $('#pitta').val(pitta);     
+                $('#kapha').val(kapha);
                 sectionValid = true;
                 return false; // Exit the loop if one radio button is checked
             }
         });
-
+        
         // If no radio button is checked in this section, set allSectionsValid to false
         if (!sectionValid) {
             allSectionsValid = false;
@@ -1354,7 +1360,6 @@ $(document).ready(function(){
     });
 
     $('#client_modal').submit(function(event) {
-        alert("success");
         $.ajax({
             type: $(form).attr('method'),
             url: $(form).attr('action'),
