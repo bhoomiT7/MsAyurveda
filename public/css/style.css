@@ -1,14 +1,11 @@
 .container {
-    width:100%;
-    margin-top:20px;
-    margin-bottom:20px;
- justify-content: center !important;
- /* background-color: red; */
-   
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
-
-
 body {
     color: #181818;
     font: 300 14px/30px "Open Sans",Sans-serif;
@@ -18,11 +15,6 @@ body {
     font-weight: 300;
     line-height: 25px;
     justify-content: center;
- 
-   
-  
-  
-
 }
 .main{
     justify-content: center;
@@ -197,12 +189,12 @@ body {
     position: absolute;
     top: 0;
     bottom: 2px;
-    left: 5px;
+    left: 0;
+    right:5px;
+    margin:5px;
     border-radius: 100%;
-    transition: all .2s ease;
-    margin: auto;
-    opacity: 1;
-    transform: scale(1);
+    align-items: center !important;
+   
 }
 
 .prakritiAnswer input[type="radio"]:not(:checked) + .label:after {
@@ -262,5 +254,8 @@ body {
 }
 .modalmainform{
     width: 100%;
-    margin: 15px 15px;
+    margin: 15px 0px;
+}
+modalmainform1{
+    width:100% !important;
 }

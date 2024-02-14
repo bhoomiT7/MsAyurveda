@@ -16,7 +16,7 @@
         </div>
         <!-- open form -->
         <form id="analysis_test" method="post" action="{{route('create_analysis')}}">
-        @csrf
+            @csrf
             <div class=" prakriti-form">
                 <div class="row">
                     <div class="col-sm-6">
@@ -102,9 +102,7 @@
                     </div>
                 </div> 
             </div>
-
-
-        <div class=" prakriti-form">
+            <div class=" prakriti-form">
                 <div class="row">
                     <div class="col-sm-6">
                          <div class="title">Color of Hair</div>
@@ -145,10 +143,9 @@
                         </div>
                     </div>
                 </div>   
-        </div>
-
-        <!-- <3> -->
-        <div class=" prakriti-form">
+            </div>
+            <!-- <3> -->
+            <div class=" prakriti-form">
                 <div class="row">
                     <div class="col-sm-6">
                          <div class="title">Skin</div>
@@ -189,9 +186,9 @@
                         </div>
                     </div>
                 </div>   
-        </div>
-        <!-- <4> -->
-        <div class=" prakriti-form">
+            </div>
+            <!-- <4> -->
+            <div class=" prakriti-form">
                 <div class="row">
                     <div class="col-sm-6">
                          <div class="title">Complexian</div>
@@ -232,9 +229,9 @@
                         </div>
                     </div>
                 </div>   
-        </div>
-        <!-- <5> -->
-        <div class=" prakriti-form">
+            </div>
+            <!-- <5> -->
+            <div class=" prakriti-form">
                 <div class="row">
                     <div class="col-sm-6">
                          <div class="title">Body Weight</div>
@@ -275,9 +272,9 @@
                         </div>
                     </div>
                 </div>   
-        </div>
-        <!-- <6> -->
-        <div class=" prakriti-form">
+            </div>
+            <!-- <6> -->
+            <div class=" prakriti-form">
                 <div class="row">
                     <div class="col-sm-6">
                          <div class="title">Nails</div>
@@ -318,9 +315,9 @@
                         </div>
                     </div>
                 </div>   
-        </div>
-        <!-- <7> -->
-        <div class=" prakriti-form">
+            </div>
+            <!-- <7> -->
+            <div class=" prakriti-form">
                 <div class="row">
                     <div class="col-sm-6">
                          <div class="title">Size and Color of the Teeth</div>
@@ -361,9 +358,9 @@
                         </div>
                     </div>
                 </div>   
-        </div>
-        <!-- <9> -->
-        <div class=" prakriti-form">
+            </div>
+            <!-- <9> -->
+            <div class=" prakriti-form">
                 <div class="row">
                     <div class="col-sm-6">
                          <div class="title">Pace of Performing Work</div>
@@ -404,9 +401,9 @@
                         </div>
                     </div>
                 </div>   
-        </div>
-        <!-- <10> -->
-        <div class=" prakriti-form">
+            </div>
+            <!-- <10> -->
+            <div class=" prakriti-form">
                 <div class="row">
                     <div class="col-sm-6">
                          <div class="title">Mental Activity</div>
@@ -447,9 +444,9 @@
                         </div>
                     </div>
                 </div>   
-        </div>
-        <!-- <11> -->
-        <div class=" prakriti-form">
+            </div>
+            <!-- <11> -->
+            <div class=" prakriti-form">
                 <div class="row">
                     <div class="col-sm-6">
                          <div class="title">Memory</div>
@@ -490,9 +487,9 @@
                         </div>
                     </div>
                 </div>   
-        </div>
-        <!-- <12> -->
-        <div class=" prakriti-form">
+            </div>
+            <!-- <12> -->
+            <div class=" prakriti-form">
                 <div class="row">
                     <div class="col-sm-6">
                          <div class="title">Sleep Pattern</div>
@@ -533,9 +530,9 @@
                         </div>
                     </div>
                 </div>   
-        </div>
-        <!-- <13> -->
-        <div class=" prakriti-form">
+            </div>
+            <!-- <13> -->
+            <div class=" prakriti-form">
                 <div class="row">
                     <div class="col-sm-6">
                          <div class="title">Weather Conditions</div>
@@ -576,13 +573,13 @@
                         </div>
                     </div>
                 </div>   
-        </div>
-        <!-- <14> -->
-        <div class=" prakriti-form">
+            </div>
+            <!-- <14> -->
+            <div class=" prakriti-form">
                 <div class="row">
                     <div class="col-sm-6">
                          <div class="title">Reactions Under Adverse Situation</div>
-                        <div class="prakritiQuestioncounter">
+                        <div class="prakritiQuestioncounter14">
                             <p class="text-center">14/27</p>
                         </div>
                     </div>
@@ -619,9 +616,9 @@
                         </div>
                     </div>
                 </div>   
-        </div>
-        <!-- <15> -->
-        <div class=" prakriti-form">
+            </div>
+            <!-- <15> -->
+            <div class=" prakriti-form">
                 <div class="row">
                     <div class="col-sm-6">
                          <div class="title">Mood</div>
@@ -662,9 +659,9 @@
                         </div>
                     </div>
                 </div>   
-        </div>
-        <!-- <16> -->
-        <div class=" prakriti-form">
+            </div>
+            <!-- <16> -->
+            <div class=" prakriti-form">
                 <div class="row">
                     <div class="col-sm-6">
                          <div class="title">Eating Habit</div>
@@ -705,9 +702,9 @@
                         </div>
                     </div>
                 </div>   
-        </div>
-        <!-- <17> -->
-        <div class=" prakriti-form">
+            </div>
+            <!-- <17> -->
+            <div class=" prakriti-form">
                 <div class="row">
                     <div class="col-sm-6">
                          <div class="title">Hunger</div>
@@ -748,9 +745,9 @@
                         </div>
                     </div>
                 </div>   
-        </div>
-        <!-- <18> -->
-        <div class=" prakriti-form">
+            </div>
+            <!-- <18> -->
+            <div class=" prakriti-form">
                 <div class="row">
                     <div class="col-sm-6">
                          <div class="title">Body Temperature</div>
@@ -791,9 +788,9 @@
                         </div>
                     </div>
                 </div>   
-        </div>
-        <!-- <19> -->
-        <div class=" prakriti-form">
+            </div>
+            <!-- <19> -->
+            <div class=" prakriti-form">
                 <div class="row">
                     <div class="col-sm-6">
                          <div class="title">Joints</div>
@@ -834,9 +831,9 @@
                         </div>
                     </div>
                 </div>   
-        </div>
-        <!-- <20> -->
-        <div class=" prakriti-form">
+            </div>
+            <!-- <20> -->
+            <div class=" prakriti-form">
                 <div class="row">
                     <div class="col-sm-6">
                          <div class="title">Nature</div>
@@ -877,9 +874,9 @@
                         </div>
                     </div>
                 </div>   
-        </div>
-        <!-- <21> -->
-        <div class=" prakriti-form">
+            </div>
+            <!-- <21> -->
+            <div class=" prakriti-form">
                 <div class="row">
                     <div class="col-sm-6">
                          <div class="title">Body Energy</div>
@@ -920,9 +917,9 @@
                         </div>
                     </div>
                 </div>   
-        </div>
-        <!-- <22> -->
-        <div class=" prakriti-form">
+            </div>
+            <!-- <22> -->
+            <div class=" prakriti-form">
                 <div class="row">
                     <div class="col-sm-6">
                          <div class="title">Quality of Voice</div>
@@ -963,9 +960,9 @@
                         </div>
                     </div>
                 </div>   
-        </div>
-        <!-- <23> -->
-        <div class=" prakriti-form">
+            </div>
+            <!-- <23> -->
+            <div class=" prakriti-form">
                 <div class="row">
                     <div class="col-sm-6">
                          <div class="title">Dreams</div>
@@ -1006,9 +1003,9 @@
                         </div>
                     </div>
                 </div>   
-        </div>
-        <!-- <24> -->
-        <div class=" prakriti-form">
+            </div>
+            <!-- <24> -->
+            <div class=" prakriti-form">
                 <div class="row">
                     <div class="col-sm-6">
                          <div class="title">Social Relations</div>
@@ -1049,9 +1046,9 @@
                         </div>
                     </div>
                 </div>   
-        </div>
-        <!-- <25> -->
-        <div class=" prakriti-form">
+            </div>
+            <!-- <25> -->
+            <div class=" prakriti-form">
                 <div class="row">
                     <div class="col-sm-6">
                          <div class="title">Wealth</div>
@@ -1092,9 +1089,9 @@
                         </div>
                     </div>
                 </div>   
-        </div>
-        <!-- <26> -->
-        <div class=" prakriti-form">
+            </div>
+            <!-- <26> -->
+            <div class=" prakriti-form">
                 <div class="row">
                     <div class="col-sm-6">
                          <div class="title">Bowel Movment</div>
@@ -1135,9 +1132,9 @@
                         </div>
                     </div>
                 </div>   
-        </div>
-        <!-- <27> -->
-        <div class=" prakriti-form">
+            </div>
+            <!-- <27> -->
+            <div class=" prakriti-form">
                 <div class="row">
                     <div class="col-sm-6">
                          <div class="title">Communication Skill</div>
@@ -1178,14 +1175,19 @@
                         </div>
                     </div>
                 </div>   
-        </div>
-        <input type="text" name="vatta" id="vatta">
-        <input type="text" name="pitta" id="pitta">
-        <input type="text" name="kapha" id="kapha">
+            </div>
+            <!-- <input type="text" name="vatta" id="vatta">
+            <input type="text" name="pitta" id="pitta">
+            <input type="text" name="kapha" id="kapha"> -->
+            <!-- <button type="submit" id="submit">Submit</button>
+            <button type="button" id="generatePdfBtn">Generate Pdf</button> -->
+            <div class="footer-button">
+                <input type="submit" id="submit" class="prakriti-submit" value="Submit">
+                <input type="reset" class="prakriti-submit" value="Reset">
+            </div>
+        </form>
     </div>
-    <button type="submit" id="submit">Submit</button>
-    <button type="button" id="generatePdfBtn">Generate Pdf</button>
-</form>
+   
 
 
     <!-- open modal -->
@@ -1194,60 +1196,61 @@
     <div class="modal-dialog modal-md"> <!-- Add modal-lg class here -->
         <div class="modal-content">
             <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Enter Personal Details</h4>
-                <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-            </div>
-
+                <div class="modal-header">
+                    <h4 class="modal-title">Enter Personal Details</h4>
+                    <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+                </div>
             <!-- Modal body -->
             <div class="modal-body">
                 <!-- Form to enter name and password -->
                 <form id="client_modal" method="post" action="{{route('create')}}">
-                <div class="modalrow">
-                @csrf 
-                    <div class="modalmainform">
-                        <label for="firstName" class="heading">First Name</label>
-                        <input type="text" class="modalform" id="firstName" name="firstname" placeholder="First Name">
+                    <div class="modalrow">
+                        @csrf 
+                        <div class="row">
+                            <div class="col-md-6 modalmainform">
+                                <label for="firstName" class="heading">First Name</label>
+                                <input type="text" class="modalform" id="firstName" name="firstname" placeholder="First Name">
+                            </div>
+                            <div class=" col-md-6 modalmainform">
+                                <label for="lastName" class="heading">Last Name</label>
+                                <input type="text" class="modalform" id="lastName" name="lastname" placeholder="Last Name">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class=" col-md-6 modalmainform">
+                                <label for="contactNo" class="heading">Contact No</label>
+                                <input type="number" class="modalform" id="contactNo" name="contact" placeholder="Contact No">
+                            </div>
+                            <div class=" col-md-6 modalmainform">
+                            <label for="city" class="heading">City</label>
+                            <input type="text" class="modalform" id="city" name="city" placeholder="City....">
+                        </div>
+                        </div>
+                        <div class="modalmainform">
+                                <label for="email" class="heading">Email Id</label>
+                                <input type="email" class="modalform" id="email" name="email" placeholder="Email Id">
+                        </div>
+                        <div class="row">
+                            <div class=" col-md-6 modalmainform1">
+                                <label for="birthDate" class="heading">Age</label>
+                                <input type="number" class="modalform" id="birthDate" name="age" placeholder="Age">
+                            </div>
+                            <div class=" col-md-6 modalmainform">
+                                <label for="gender" class="heading">Gender</label><br>
+                                <input type="radio" name="gender" class="radiobtn" value="male" checked> Male
+                                <input type="radio" name="gender" value="female"> Female
+                            </div>
+                        </div>
                     </div>
-                    <div class="modalmainform">
-                        <label for="lastName" class="heading">Last Name</label>
-                        <input type="text" class="modalform" id="lastName" name="lastname" placeholder="Last Name">
+                    <div class="modal-container">
+                        <button type="submit" class="modalbutton">Submit</button>
                     </div>
-                    <div class="modalmainform">
-                        <label for="contactNo" class="heading">Contact No</label>
-                        <input type="number" class="modalform" id="contactNo" name="contact" placeholder="Contact No">
-                    </div>
-                    <div class="modalmainform">
-                        <label for="email" class="heading">Email Id</label>
-                        <input type="email" class="modalform" id="email" name="email" placeholder="Email Id">
-                    </div>
-                    <div class="modalmainform">
-                        <label for="city" class="heading">City</label>
-                        <input type="text" class="modalform" id="city" name="city" placeholder="City....">
-                    </div>
-                    <div class="modalmainform">
-                        <label for="birthDate" class="heading">Age</label>
-                        <input type="number" class="modalform" id="birthDate" name="age" placeholder="Age">
-                    </div>
-                    <div class="modalmainform">
-                        <label for="gender" class="heading">Gender</label><br>
-                        <input type="radio" name="gender" class="radiobtn" value="male" checked> Male
-                        <input type="radio" name="gender" value="female"> Female
-                    </div>
-                </div>
-    <div class="modal-container">
-        <button type="submit" class="modalbutton">Submit</button>
-    </div>
-    
-</form>
-
+                </form>
             </div>
         </div>
     </div>
 </div>
-
         <!-- close modal -->
-</div>
     <script src="bootstrap-5.3.2-dist/js/bootstrap.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     

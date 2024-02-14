@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\client_data;
+use PDF;
+
 class AnalysisController extends Controller
 {
     public function create(Request $request){    
@@ -16,14 +18,11 @@ class AnalysisController extends Controller
         $data->gender=$request->gender;
         $data->age=$request->age;
         $data->email=$request->email;
-
         $data->save();
         return back();
     }
     public function create_analysis(Request $request){
-        
-        //dd($request->BodyFrame);
-        
+
         $data=new client_data();
     
         $data->bodyframe=$request->BodyFrame1;
@@ -61,8 +60,9 @@ class AnalysisController extends Controller
     }
     public function view()
     {
-        $data = patient_analysis::latest()->first();
-        $pdf = PDF::loadView('Ticket.view', $data);
+        $data = client_data::latest()->first();
+    
+        $pdf = PDF::loadView('prakrutipdf');
         return $pdf->stream('document.pdf');
     }
 }
