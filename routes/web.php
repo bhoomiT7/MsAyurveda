@@ -18,3 +18,8 @@ Route::get('/', function () {
     return view('prakruti');
 });
 //Route::get('/prakruti',[AnalysisController::class,'index']);
+Route::post('patient',[AnalysisController::class,'create'])->name('create');
+
+Route::post('patient/analysis',[AnalysisController::class,'create_analysis'])->name('create_analysis');
+
+Route::get('/viewpdf',[AnalysisController::class,'view'])->name('viewpdf');
