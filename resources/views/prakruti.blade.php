@@ -501,7 +501,7 @@
                         <div class="prakritiAnswer">
                             <div class="field field-prakriti-Body-Frame">
                                 <div class="control">
-                                    <input type="radio" id="prakriti-Body-Frame-vatta12" name="Body-Frame12" value="vatta" title="Interrupted, Less" class="radio required-entry" data-validate="{'validate-one-required-by-name':true}">
+                                    <input type="radio" id="prakriti-Body-Frame-vatta12" name="BodyFrame12" value="vatta" title="Interrupted, Less" class="radio required-entry" data-validate="{'validate-one-required-by-name':true}">
                                     <label class="label" for="prakriti-Body-Frame-vatta12">
                                         <span>Interrupted, Less</span>
                                     </label>
@@ -511,7 +511,7 @@
                         <div class="prakritiAnswer">
                             <div class="field field-prakriti-Body-Frame">
                                 <div class="control">
-                                    <input type="radio" id="prakriti-Body-Frame-pitta12" name="Body-Frame12" value="pitta" title="Moderate" class="radio required-entry" data-validate="{'validate-one-required-by-name':true}">
+                                    <input type="radio" id="prakriti-Body-Frame-pitta12" name="BodyFrame12" value="pitta" title="Moderate" class="radio required-entry" data-validate="{'validate-one-required-by-name':true}">
                                     <label class="label" for="prakriti-Body-Frame-pitta12">
                                         <span>Moderate</span>
                                     </label>
@@ -521,7 +521,7 @@
                         <div class="prakritiAnswer">
                             <div class="field field-prakriti-Body-Frame">
                                 <div class="control">
-                                    <input type="radio" id="prakriti-Body-Frame-kapha12" name="Body-Frame12" value="kapha" title="Sleepy, Lazy" class="radio required-entry" data-validate="{'validate-one-required-by-name':true}">
+                                    <input type="radio" id="prakriti-Body-Frame-kapha12" name="BodyFrame12" value="kapha" title="Sleepy, Lazy" class="radio required-entry" data-validate="{'validate-one-required-by-name':true}">
                                     <label class="label" for="prakriti-Body-Frame-kapha12">
                                         <span>Sleepy, Lazy</span>
                                     </label>
@@ -1027,7 +1027,7 @@
                         <div class="prakritiAnswer">
                             <div class="field field-prakriti-Body-Frame">
                                 <div class="control">
-                                    <input type="radio" id="prakriti-Body-Frame-pitta24" name="BodyFrame24" value="pitta" title="Good NO. Of Friends" class="radio required-entry" data-validate="{'validate-one-required-by-name':true}">
+                                    <input type="radio" id="prakriti-Body-Frame-pitta24" name="BodyFrame24" value="pitta" title="Good No. of Friends" class="radio required-entry" data-validate="{'validate-one-required-by-name':true}">
                                     <label class="label" for="prakriti-Body-Frame-pitta24">
                                         <span>Good No. of Friends</span>
                                     </label>
@@ -1176,12 +1176,12 @@
                     </div>
                 </div>   
             </div>
-            <!-- <input type="text" name="vatta" id="vatta">
-            <input type="text" name="pitta" id="pitta">
-            <input type="text" name="kapha" id="kapha"> -->
-            <!-- <button type="submit" id="submit">Submit</button>
-            <button type="button" id="generatePdfBtn">Generate Pdf</button> -->
-            <div class="footer-button">
+            <input type="text" name="vatta" id="vatta" hidden>
+            <input type="text" name="pitta" id="pitta" hidden>
+            <input type="text" name="kapha" id="kapha" hidden >
+     
+            <!-- <button type="button" id="generatePdfBtn">Generate Pdf</button> -->
+                      <div class="footer-button">
                 <input type="submit" id="submit" class="prakriti-submit" value="Submit">
                 <input type="reset" class="prakriti-submit" value="Reset">
             </div>
@@ -1209,11 +1209,11 @@
                         <div class="row">
                             <div class="col-md-6 modalmainform">
                                 <label for="firstName" class="heading">First Name</label>
-                                <input type="text" class="modalform" id="firstName" name="firstname" placeholder="First Name">
+                                <input type="text" class="modalform" id="firstName" name="firstname" placeholder="First Name" style="text-transform:uppercase">
                             </div>
                             <div class=" col-md-6 modalmainform">
                                 <label for="lastName" class="heading">Last Name</label>
-                                <input type="text" class="modalform" id="lastName" name="lastname" placeholder="Last Name">
+                                <input type="text" class="modalform" id="lastName" name="lastname" placeholder="Last Name" style="text-transform:uppercase">
                             </div>
                         </div>
                         <div class="row">
@@ -1223,7 +1223,7 @@
                             </div>
                             <div class=" col-md-6 modalmainform">
                             <label for="city" class="heading">City</label>
-                            <input type="text" class="modalform" id="city" name="city" placeholder="City....">
+                            <input type="text" class="modalform" id="city" name="city" placeholder="City...." style="text-transform:uppercase">
                         </div>
                         </div>
                         <div class="modalmainform">
@@ -1238,12 +1238,12 @@
                             <div class=" col-md-6 modalmainform">
                                 <label for="gender" class="heading">Gender</label><br>
                                 <input type="radio" name="gender" class="radiobtn" value="male" checked> Male
-                                <input type="radio" name="gender" value="female"> Female
+                                <input type="radio" name="gender"  value="female"> Female
                             </div>
                         </div>
                     </div>
                     <div class="modal-container">
-                        <button type="submit" class="modalbutton">Submit</button>
+                        <button type="submit" class="modalbutton" id="generatepdf">Submit</button>
                     </div>
                 </form>
             </div>
@@ -1299,7 +1299,7 @@ $(document).ready(function(){
 <script>
     let vatta=0,pitta=0,kapha=0;
     let selectedTitle,selectedValueselectedId;
-  
+   
     $('#analysis_test').submit(function(event) {
         event.preventDefault();
 
@@ -1313,6 +1313,7 @@ $(document).ready(function(){
         // Check if at least one radio button in this section is checked
         var sectionValid = false;
         $(this).find('input[type="radio"]').each(function() {
+  
             if ($(this).is(':checked')) {
                 selectedTitle =  $(this).attr('title');
                 selectedValue =  $(this).val();
@@ -1342,15 +1343,14 @@ $(document).ready(function(){
     
     if (allSectionsValid) {
         var form = this;
+        alert( $(form).attr('action'));
         $.ajax({
             type: $(form).attr('method'),
             url: $(form).attr('action'),
             data: $(form).serialize(),
             success: function(response) {
-                // Assuming the response contains the route or URL
-               // window.location.href = response.route;
+               $('#myModal').modal('show');
                 $('input[type="radio"]').prop('checked', false);
-                $('#myModal').modal('show');
             },
             error: function(xhr, status, error) {
                 console.error(xhr.responseText);
@@ -1370,8 +1370,8 @@ $(document).ready(function(){
             success: function(response) {
                 // Assuming the response contains the route or URL
                // window.location.href = response.route;
-               alert("heere");
                 $('input[type="radio"]').prop('checked', false);
+                
             },
             error: function(xhr, status, error) {
                 console.error(xhr.responseText);
@@ -1379,9 +1379,10 @@ $(document).ready(function(){
         });
     });
     document.addEventListener("DOMContentLoaded", function() {
-    var generatePdfBtn = document.getElementById("generatePdfBtn");
+    var generatePdfBtn = document.getElementById("generatepdf");
     generatePdfBtn.addEventListener("click", function() {
         // Redirect to the view_pdf route
+
         window.location.href = "/viewpdf"; // Replace with your actual route
     });
 });

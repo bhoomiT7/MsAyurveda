@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\client_data;
-use PDF;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class AnalysisController extends Controller
 {
@@ -19,12 +19,23 @@ class AnalysisController extends Controller
         $data->age=$request->age;
         $data->email=$request->email;
         $data->save();
+    
+        $vatta=($data->vatta*100)/27;
+        $pitta=($data->pitta*100)/27;
+        $kapha=($data->kapha*100)/27;
+        
+        $chartdata = [
+            'labels' => ['Vata', 'Pitta', 'Kapha'],
+            'data' => [$vatta,$pitta,$kapha],
+        ];
+        $pdf = PDF::loadView('prakrutipdf',['data'=> $data,'chartdata'=> $chartdata]);
+        return $pdf->stream();
+       // return view('prakrutipdf')->with('data',$data)->with('chartdata',$chartdata);
         return back();
     }
     public function create_analysis(Request $request){
 
         $data=new client_data();
-    
         $data->bodyframe=$request->BodyFrame1;
         $data->typeofhair=$request->BodyFrame2;
         $data->colorofhair=$request->BodyFrame3;
@@ -61,8 +72,17 @@ class AnalysisController extends Controller
     public function view()
     {
         $data = client_data::latest()->first();
-    
-        $pdf = PDF::loadView('prakrutipdf');
-        return $pdf->stream('document.pdf');
+        $vatta=($data->vatta*100)/27;
+        $pitta=($data->pitta*100)/27;
+        $kapha=($data->kapha*100)/27;
+        
+       // dd($kapha);
+        $chartdata = [
+            'labels' => ['Vata', 'Pitta', 'Kapha'],
+            'data' => [$vatta,$pitta,$kapha],
+        ];
+        $pdf = PDF::loadView('prakrutipdf',['data'=> $data,'chartdata'=> $chartdata]);
+        return $pdf->stream();
+       // return view('prakrutipdf')->with('data',$data)->with('chartdata',$chartdata);
     }
 }
