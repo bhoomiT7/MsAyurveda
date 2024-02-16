@@ -1513,7 +1513,6 @@ $(document).ready(function(){
             $(this).closest('.prakriti-form').css('border-left', ''); // Reset border
         }
     });
-
     $('#myModal').on('shown.bs.modal', function () {
         alert("check male");
         $('#male').prop('checked', true);
