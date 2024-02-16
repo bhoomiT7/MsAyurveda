@@ -1554,8 +1554,7 @@ $(document).ready(function(){
                 sectionValid = true;
                 return false; // Exit the loop if one radio button is checked
             }
-        });
-        
+        }); 
         // If no radio button is checked in this section, set allSectionsValid to false
         if (!sectionValid) {
             allSectionsValid = false;
