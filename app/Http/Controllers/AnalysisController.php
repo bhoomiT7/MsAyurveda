@@ -8,6 +8,30 @@ use Barryvdh\DomPDF\Facade\Pdf;
 
 class AnalysisController extends Controller
 {
+    public function index(){
+        $data = client_data::latest()->first();
+        $vatta=($data->vatta*100)/27;
+        $pitta=($data->pitta*100)/27;
+        $kapha=($data->kapha*100)/27;
+
+        $chartdata = [
+            'labels' => ['Vata', 'Pitta', 'Kapha'],
+            'data' => [$vatta,$pitta,$kapha],
+        ];
+        return view('prakruti')->with('status',0)->with('data',$data)->with('chartdata',$chartdata);
+    }
+    public function showresult(){
+        $data = client_data::latest()->first();
+        $vatta=($data->vatta*100)/27;
+        $pitta=($data->pitta*100)/27;
+        $kapha=($data->kapha*100)/27;
+
+        $chartdata = [
+            'labels' => ['Vata', 'Pitta', 'Kapha'],
+            'data' => [$vatta,$pitta,$kapha],
+        ];
+        return view('prakruti')->with('status',1)->with('data',$data)->with('chartdata',$chartdata);
+    }
     public function create(Request $request){    
     
         $data = client_data::latest()->first();
@@ -20,18 +44,6 @@ class AnalysisController extends Controller
         $data->email=$request->email;
         $data->save();
     
-        $vatta=($data->vatta*100)/27;
-        $pitta=($data->pitta*100)/27;
-        $kapha=($data->kapha*100)/27;
-        
-        $chartdata = [
-            'labels' => ['Vata', 'Pitta', 'Kapha'],
-            'data' => [$vatta,$pitta,$kapha],
-        ];
-        $pdf = PDF::loadView('prakrutipdf',['data'=> $data,'chartdata'=> $chartdata]);
-        return $pdf->stream();
-       // return view('prakrutipdf')->with('data',$data)->with('chartdata',$chartdata);
-        return back();
     }
     public function create_analysis(Request $request){
 
@@ -69,20 +81,18 @@ class AnalysisController extends Controller
         $data->save();
         return back();
     }
-    public function view()
-    {
+
+    public function view(){
         $data = client_data::latest()->first();
         $vatta=($data->vatta*100)/27;
         $pitta=($data->pitta*100)/27;
         $kapha=($data->kapha*100)/27;
-        
-       // dd($kapha);
+
         $chartdata = [
             'labels' => ['Vata', 'Pitta', 'Kapha'],
             'data' => [$vatta,$pitta,$kapha],
         ];
         $pdf = PDF::loadView('prakrutipdf',['data'=> $data,'chartdata'=> $chartdata]);
         return $pdf->stream();
-       // return view('prakrutipdf')->with('data',$data)->with('chartdata',$chartdata);
     }
 }

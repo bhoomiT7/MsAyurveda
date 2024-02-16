@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link href="{{ asset('sass/app.scss') }}" rel="stylesheet">
     <link href="/bootstrap-5.3.2-dist/css/bootstrap.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body style="background-color:#f6f8fa">
     <div class="container ">
@@ -1180,13 +1181,189 @@
             <input type="text" name="pitta" id="pitta" hidden>
             <input type="text" name="kapha" id="kapha" hidden >
      
-            <!-- <button type="button" id="generatePdfBtn">Generate Pdf</button> -->
+           
                       <div class="footer-button">
                 <input type="submit" id="submit" class="prakriti-submit" value="Submit">
-                <input type="reset" class="prakriti-submit" value="Reset">
+                <input type="reset" class="prakriti-reset" value="Reset">
             </div>
         </form>
+</div>
+        @if($status==1)
+        <div id="result">
+      
+            <!--start analysis test-->
+            
+
+        <div style="width: 50%; margin: 0 auto; display: flex; justify-content: flex-end;">
+            <canvas id="barChart"></canvas>
+        </div>
+
+        <script>
+        var ctx = document.getElementById('barChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: @json($chartdata['labels']),
+                datasets: [{
+                    label: 'Data',
+                    data: @json($chartdata['data']),
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)', // First bar color
+                        'rgba(54, 162, 235, 0.2)', // Second bar color
+                        'rgba(255, 206, 86, 0.2)', // Third bar color
+                        // Add more colors as needed
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                // Add corresponding border colors if needed
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+            scales: {
+                y: {
+                    beginAtZero: false, // Set to false
+                    min: 10,
+                    max: 100,
+                    ticks: {
+                        callback: function(value, index, values) {
+                            return value + '%';
+                        },
+                        stepSize: 10
+                    }
+                }
+            }
+        }
+        });
+    </script>
+  
+     @if(( $data->vatta > $data->pitta) && ( $data->vatta > $data->kapha))
+        <h2 class="center">Your body type is :Vata</h2><br>
+        <div class="center">
+            <p class="data">
+                Imbalanced Vata:<br>
+                When out of balance, vata tends to cause fear, anxiety, isolation, loneliness and exhaustion. It can lead to both 
+                physical and energetic depletion, disrupt proper communication and cause all sorts of abnormal movments in the body,
+                such as tics, tremors and muscle spasms.</p><br><br>
+        </div>
+        <div style="text-align: center;">
+            <a href="#" style="text-decoration: none;">For more information talk to our Doctor.</a>
+        </div>
+    @endif
+    @if(( $data->pitta > $data->vatta) && ( $data->pitta > $data->kapha))
+        <h2 class="center">Your body type is:Pitta</h2><br>
+        <div class="center">
+            <p class="data">
+                Imbalanced Pitta:<br>
+                When out of balance, Pitta causes fiery, reactionary emotions such as frustration, anger, jealousy and critisum.
+                Imbalanced pitta is often at the root of inflammatory disorders, which can affect organs and tissues throughout the
+                body.</p><br><br>
+        </div>
+            <div style="text-align: center;">
+                <a href="#" style="text-decoration: none;">For more information talk to our Doctor.</a>
+            </div>
+    @endif
+
+    @if(($data->kapha > $data->vatta) && ( $data->kapha > $data->pitta))
+    <h2 class="center">Your body type is:Kapha</h2><br>
+    <div class="center">
+            <p class="data">
+        Imbalanced Vata:<br>
+        When out of balance, Kapha triggers emotions of attachment, greed and possessivness and can also create stubborness,
+        lethargy and resistance to change. physically, kapha tends to invite stragnation and congestion in organs and tissues
+        throughout the body-including mind.</p><br><br>
+        </div>
+        <div style="text-align: center;">
+            <a href="#" style="text-decoration: none;">For more information talk to our Doctor.</a>
+        </div>
+    @endif
+
+    @if($data->vatta == $data->kapha )
+         @if($data->vatta == $data->pitta)
+         <h2 class="center">Your body type is :Vata, Pitta, Kapha</h2><br>
+         <div class="center">
+            <p class="data">
+        <b>Imbalanced Vata:</b><br>
+        When out of balance, vata tends to cause fear, anxiety, isolation, loneliness and exhaustion. It can lead to both 
+        physical and energetic depletion, disrupt proper communication and cause all sorts of abnormal movments in the body,
+        such as tics, tremors and muscle spasms.<br><br>
+        <b>Imbalanced Pitta:</b><br>
+        When out of balance, Pitta causes fiery, reactionary emotions such as frustration, anger, jealousy and critisum.
+        Imbalanced pitta is often at the root of inflammatory disorders, which can affect organs and tissues throughout the
+        body.<br><br>
+        <b>Imbalanced Kapha:</b><br>
+        When out of balance, Kapha triggers emotions of attachment, greed and possessivness and can also create stubborness,
+        lethargy and resistance to change. physically, kapha tends to invite stragnation and congestion in organs and tissues
+        throughout the body-including mind.</p><br><br>
+        </div>
+        <div style="text-align: center;">
+            <a href="#" style="text-decoration: none;">For more information talk to our Doctor.</a>
+        </div>
+        @endif
+        @if($data->pitta< $data->vatta)
+        <h2 class="center">Your body type is :Vata, Kapha</h2><br>
+        <div class="center">
+            <p class="data">
+        Imbalanced Vata:<br>
+        When out of balance, vata tends to cause fear, anxiety, isolation, loneliness and exhaustion. It can lead to both 
+        physical and energetic depletion, disrupt proper communication and cause all sorts of abnormal movments in the body,
+        such as tics, tremors and muscle spasms.<br><br>
+        Imbalanced Kapha:<br>
+        When out of balance, Kapha triggers emotions of attachment, greed and possessivness and can also create stubborness,
+        lethargy and resistance to change. physically, kapha tends to invite stragnation and congestion in organs and tissues
+        throughout the body-including mind.</p><br><br>
+        </div>
+        <div style="text-align: center;">
+            <a href="#" style="text-decoration: none;">For more information talk to our Doctor.</a>
+        </div>
+        @endif
+    @endif
+    @if($data->pitta == $data->vatta)
+        @if($data->kapha < $data->pitta)
+        <h2 class="center">Your body type is :Vata , Pitta</h2><br>
+        <div class="center">
+            <p class="data">
+                Imbalanced Vata:<br>
+                When out of balance, vata tends to cause fear, anxiety, isolation, loneliness and exhaustion. It can lead to both 
+                physical and energetic depletion, disrupt proper communication and cause all sorts of abnormal movments in the body,
+                such as tics, tremors and muscle spasms.<br><br>
+                Imbalanced Pitta:<br>
+                When out of balance, Pitta causes fiery, reactionary emotions such as frustration, anger, jealousy and critisum.
+                Imbalanced pitta is often at the root of inflammatory disorders, which can affect organs and tissues throughout the
+                body.</p><br><br>
+        </div>
+        <div style="text-align: center;">
+            <a href="#" style="text-decoration: none;">For more information talk to our Doctor.</a>
+        </div>
+        @endif
+    @endif
+    @if($data->pitta == $data->kapha)
+        @if($data->vatta < $data->pitta)
+        <h2 class="center">Your body type is:Pitta, Kapha</h2><br>
+        <div class="center">
+            <p class="data">
+        Imbalanced Pitta:<br>
+        When out of balance, Pitta causes fiery, reactionary emotions such as frustration, anger, jealousy and critisum.
+        Imbalanced pitta is often at the root of inflammatory disorders, which can affect organs and tissues throughout the
+        body.<br><br>
+        Imbalanced Kapha:<br>
+        When out of balance, Kapha triggers emotions of attachment, greed and possessivness and can also create stubborness,
+        lethargy and resistance to change. physically, kapha tends to invite stragnation and congestion in organs and tissues
+        throughout the body-including mind.</p><br><br>
+        </div>
+        <div style="text-align: center;">
+            <a href="#" style="text-decoration: none;">For more information talk to our Doctor.</a>
+        </div>
+        @endif
+    @endif 
+ <button type="button" id="generatePdfBtn">Generate Pdf</button>
+        <!--End-->
     </div>
+        @endif
+ -
    
 
 
@@ -1203,7 +1380,7 @@
             <!-- Modal body -->
             <div class="modal-body">
                 <!-- Form to enter name and password -->
-                <form id="client_modal" method="post" action="{{route('create')}}">
+                <form id="client_modal" method="post" action="{{ route('create') }}" target="_blank">
                     <div class="modalrow">
                         @csrf 
                         <div class="row">
@@ -1217,10 +1394,12 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class=" col-md-6 modalmainform">
-                                <label for="contactNo" class="heading">Contact No</label>
-                                <input type="number" class="modalform" id="contactNo" name="contact" placeholder="Contact No">
-                            </div>
+                        <div class="col-md-6 modalmainform">
+                            <label for="contactNo" class="heading">Contact No</label>
+                            <input type="tel" class="modalform" id="contactNo" name="contact" placeholder="Contact No" minlength="10" maxlength="10">
+                            <div id="contactNoError" class="error-message"></div>
+                        </div>
+
                             <div class=" col-md-6 modalmainform">
                             <label for="city" class="heading">City</label>
                             <input type="text" class="modalform" id="city" name="city" placeholder="City...." style="text-transform:uppercase">
@@ -1237,7 +1416,7 @@
                             </div>
                             <div class=" col-md-6 modalmainform">
                                 <label for="gender" class="heading">Gender</label><br>
-                                <input type="radio" name="gender" class="radiobtn" value="male" checked> Male
+                                <input type="radio" name="gender" class="radiobtn" value="male" id="male"> Male
                                 <input type="radio" name="gender"  value="female"> Female
                             </div>
                         </div>
@@ -1253,6 +1432,7 @@
         <!-- close modal -->
     <script src="bootstrap-5.3.2-dist/js/bootstrap.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   
     
 </body>
 </html>
@@ -1260,7 +1440,8 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const forms = document.querySelectorAll('.prakriti-form');
-
+    /*Hide PRakruti Test Result Div*/
+    
     forms.forEach(form => {
         const radioButtons = form.querySelectorAll('input[type="radio"]');
         
@@ -1283,15 +1464,59 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 </script>
+<script>
+document.getElementById('client_modal').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Send a POST request to the server to submit the form data
+    fetch(this.action, {
+        method: 'POST',
+        body: new FormData(this),
+    })
+    .then(response => response.blob()) // Get the response as a blob
+    .then(blob => {
+        // Create a blob URL for the response
+        const url = window.URL.createObjectURL(blob);
+
+        // Open the blob URL in a new tab
+        window.open(url, '_blank');
+
+        // Release the object URL when it's no longer needed
+        window.URL.revokeObjectURL(url);
+    })
+    .catch(error => console.error('Error:', error));
+});
+</script>
+
+<script>
+document.getElementById('contactNo').addEventListener('input', function() {
+    var contactNo = this.value.trim();
+    var errorDiv = document.getElementById('contactNoError');
+    
+    if (contactNo.length !== 10 || isNaN(contactNo)) {
+        errorDiv.textContent = "Contact number must be a 10-digit number.";
+        this.classList.add('invalid');
+    } else {
+        errorDiv.textContent = "";
+        this.classList.remove('invalid');
+    }
+});
+</script>
+
 
 <script>
 $(document).ready(function(){
     $('input[type="radio"]').change(function(){
         if ($(this).is(':checked')) {
-            $(this).closest('.prakriti-form').css('border-left', '4px solid #73492f');
+            $(this).closest('.prakriti-form').css('border-left', '4px solid #4b794b');
         } else {
             $(this).closest('.prakriti-form').css('border-left', ''); // Reset border
         }
+    });
+
+    $('#myModal').on('shown.bs.modal', function () {
+        alert("check male");
+        $('#male').prop('checked', true);
     });
 });
 </script>
@@ -1350,7 +1575,6 @@ $(document).ready(function(){
             data: $(form).serialize(),
             success: function(response) {
                $('#myModal').modal('show');
-                $('input[type="radio"]').prop('checked', false);
             },
             error: function(xhr, status, error) {
                 console.error(xhr.responseText);
@@ -1368,10 +1592,6 @@ $(document).ready(function(){
             url: $(form).attr('action'),
             data: $(form).serialize(),
             success: function(response) {
-                // Assuming the response contains the route or URL
-               // window.location.href = response.route;
-                $('input[type="radio"]').prop('checked', false);
-                
             },
             error: function(xhr, status, error) {
                 console.error(xhr.responseText);
@@ -1383,7 +1603,15 @@ $(document).ready(function(){
     generatePdfBtn.addEventListener("click", function() {
         // Redirect to the view_pdf route
 
-        window.location.href = "/viewpdf"; // Replace with your actual route
+        window.location.href = "/prakruti"; // Replace with your actual route
+        
+    });
+});
+document.addEventListener('DOMContentLoaded', function() {
+    var btn = document.getElementById("generatePdfBtn");
+    btn.addEventListener("click", function() {
+        // Redirect to the view_pdf route in a new tab
+        window.open("/viewpdf", "_blank");
     });
 });
 </script>
